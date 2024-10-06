@@ -23,13 +23,13 @@ class AuthService(
 
     fun login(loginRequest: LoginRequest): TokenResponse {
         try {
-            val authenticationToken = UsernamePasswordAuthenticationToken(loginRequest.username, loginRequest.password)
+            val authenticationToken = UsernamePasswordAuthenticationToken(loginRequest.email, loginRequest.password)
             val authentication: Authentication = authenticationManager.authenticate(authenticationToken)
             SecurityContextHolder.getContext().authentication = authentication
 
             // Access Token 및 Refresh Token 생성
-            val accessToken = jwtTokenProvider.createToken(loginRequest.username, authentication.authorities.map { it.authority })
-            val refreshToken = jwtTokenProvider.createRefreshToken(loginRequest.username)
+            val accessToken = jwtTokenProvider.createToken(loginRequest.email, authentication.authorities.map { it.authority })
+            val refreshToken = jwtTokenProvider.createRefreshToken(loginRequest.email)
 
             // TokenResponse에 AccessToken과 RefreshToken을 포함해서 반환
             return TokenResponse(accessToken, refreshToken)

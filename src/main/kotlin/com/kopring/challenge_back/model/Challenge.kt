@@ -18,14 +18,15 @@ data class Challenge(
     @Column(nullable = false)
     var challengeDescription: String = "",  // 챌린지 설명
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     var category: String = "",  // 챌린지를 구분하는 토큰 필드 추가
 
-    @Column(nullable = false, columnDefinition = "TIMESTAMP")
+    @Column(nullable = false)
     @CreationTimestamp
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "Asia/Seoul")
     var startDate: LocalDateTime = LocalDateTime.now(),  // 챌린지 시작 날짜
 
-    @Column(nullable = false, columnDefinition = "TIMESTAMP")
+    @Column(nullable = false)
     @CreationTimestamp
     var endDate: LocalDateTime = LocalDateTime.now().plusDays(30),  // 챌린지 종료 날짜
 
