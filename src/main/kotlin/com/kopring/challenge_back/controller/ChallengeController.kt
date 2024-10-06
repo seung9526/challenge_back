@@ -1,7 +1,7 @@
 package com.kopring.challenge_back.controller
 
+import ChallengeCreateRequest
 import com.kopring.challenge_back.dto.ApiResponse
-import com.kopring.challenge_back.dto.ChallengeCreateRequest
 import com.kopring.challenge_back.dto.ChallengeDTO
 import com.kopring.challenge_back.service.ChallengeService
 import io.swagger.v3.oas.annotations.security.SecurityRequirement

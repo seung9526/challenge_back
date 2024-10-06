@@ -1,6 +1,8 @@
 package com.kopring.challenge_back.dto
 
+import jakarta.validation.constraints.Email
+
 data class LoginRequest(
-    val username: String,
+    val email: String,
     val password: String
 )

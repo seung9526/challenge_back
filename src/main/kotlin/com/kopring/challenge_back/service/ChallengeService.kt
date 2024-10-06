@@ -1,6 +1,6 @@
 package com.kopring.challenge_back.service
 
-import com.kopring.challenge_back.dto.ChallengeCreateRequest
+import ChallengeCreateRequest
 import com.kopring.challenge_back.dto.ChallengeDTO
 import com.kopring.challenge_back.model.Challenge
 import com.kopring.challenge_back.repository.ChallengeRepository
