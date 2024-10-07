@@ -2,17 +2,23 @@ package com.kopring.challenge_back.dto
 
 import com.fasterxml.jackson.annotation.JsonFormat
 import io.swagger.v3.oas.annotations.media.Schema
-import java.time.LocalDateTime
+import org.hibernate.usertype.internal.ZonedDateTimeCompositeUserType.ZonedDateTimeEmbeddable
+import java.time.*
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 data class ChallengeDTO(
     val id: Long,
     val challengeName: String,
     val challengeDescription: String,
     val category: String,
-
+    @Schema(
+        description = "챌린지 시작 시간",
+        example = "2024-10-06 10:11",
+        pattern = "yyyy-MM-dd HH:mm",
+        type = "string"
+    )
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "Asia/Seoul")
-    val startDate: LocalDateTime,
-
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "Asia/Seoul")
-    val endDate: LocalDateTime
+    val startDate: LocalDateTime = LocalDateTime.parse("yyyy-MM-dd HH:mm:ss"),
+    val endDate: LocalDate
 )
