@@ -9,6 +9,5 @@ import java.util.*
 class ChallengeBackApplication
 
 fun main(args: Array<String>) {
-	TimeZone.setDefault(TimeZone.getTimeZone("Asia/Seoul"))
 	runApplication<ChallengeBackApplication>(*args)
 }

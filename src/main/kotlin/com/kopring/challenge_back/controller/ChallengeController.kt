@@ -20,7 +20,7 @@ class ChallengeController(private val challengeService: ChallengeService) {
     @PostMapping("/create")
     fun createChallenge(
         @RequestBody request: ChallengeCreateRequest,
-        authentication: Authentication
+        authentication: Authentication,
     ): ResponseEntity<ApiResponse<ChallengeDTO>> {
         val challenge = challengeService.createChallenge(request, authentication)
         val response = ApiResponse("success", "Challenge created successfully", challenge)

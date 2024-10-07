@@ -47,7 +47,7 @@ dependencies {
 	runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5") // Jackson을 사용해 JWT 직렬화
 
 	// Swagger 관련 의존성 추가
-	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0")
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0")
 
 	// Lombok
 	compileOnly("org.projectlombok:lombok")
